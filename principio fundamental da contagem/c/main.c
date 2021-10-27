@@ -10,6 +10,7 @@ int potencia(base, expoente);
 int exemploAtletas(int qtd, int possiveis);
 int cartasBaralho(int base, int expoente);
 int cartasBaralhosSemReposicao(int qtd, int possiveis);
+int cartesianoOrtogonal(int eixos, int passos);
 int main(int argc, char const *argv[])
 {
     int qtd,caraCoroa;
@@ -23,7 +24,7 @@ int main(int argc, char const *argv[])
     printf("\n Cartas com reposicao = %d", cartasBaralho(52, 5));
     printf("\n Cartas sem reposicao = %d", cartasBaralhosSemReposicao(52,5));
 
-     
+    printf("\n quantidade possiveis = %d", cartesianoOrtogonal(2, 4));
 }
 
 
@@ -67,6 +68,18 @@ int cartasBaralhosSemReposicao(int qtd, int possiveis)
     }
 
     return test;
+}
+
+int cartesianoOrtogonal(int eixos, int passos)
+{
+    if (passos == 0)
+    {
+        return 1;
+    }
+    else
+    {
+        return eixos * potencia(eixos, passos - 1);
+    }
 }
 
 

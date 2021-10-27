@@ -12,6 +12,18 @@ sao escolhidas  sucessivamente
 a) quantas sao as sequencias de resultados
 se a escolha é feita com reposicao?
 
+b) sem reposicao
+
+
+ex 4  um homem encontra-se na origem
+de um sistema cartesiano ortogonal
+de eixos x,y considere que ele pode caminhar
+a uma unidade considere que ele pode dar 
+um passo de cada vez, passo pro norte
+ou para o leste
+quantas trajetorias ele pode percorrer
+se ele der exatamente 4 passos 
+
 """
 
 
