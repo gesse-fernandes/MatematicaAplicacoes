@@ -27,7 +27,7 @@ MATEMATICA = P_10, 2,3,2
 """
 
 from itertools import permutations
-from typing import Text
+from typing import NoReturn, Text
 
 
 def factorial(number):
@@ -160,7 +160,7 @@ totM = 0
 s = "MATEMATICA"
 for letras in range(len(s)):
     if s[letras] == "M":
-        totM +=1
+        totM += 1
 print(totM)
 
 
@@ -169,29 +169,172 @@ def funcaoRetorna(string):
     totM = 0
     totA = 0
     totT = 0
+    totN = 0
     strstring = 1
+    strStringM = 1
+    strStringA = 1
+    strSringT = 1
+    strSringN = 1
     if tam == 1 or tam == 0:
         return 1
-    else: 
+    else:
         for MRepet in range(tam):
             if string[MRepet] == "M":
-                totM+=1
+                totM += 1
             elif string[MRepet] == "A":
-                totA+=1
+                totA += 1
             elif string[MRepet] == "T":
-                totT+=1
-        for i in range(tam,0,-1):
-             strstring = strstring * i
+                totT += 1
+            elif string[MRepet] == "N":
+                totN += 1
 
-        if totM == 1 or totM == 0 or totA == 1 or totA == 0 or totT == 1 or totT ==0:
+        for i in range(tam, 0, -1):
+            strstring = strstring * i
+
+        if totM == 0 or totA == 0 or totT == 0:
             return 1
-        else: 
-             
-        
-        
-        
+        else:
+            for i in range(totM, 0, -1):
+                strStringM = strStringM*i
+            for i in range(totA, 0, -1):
+                strStringA = strStringA*i
 
-funcaoRetorna("MATEMATICA")
-            
+            for i in range(totT, 0, -1):
+                strSringT = strSringT*i
+            for i in range(totN, 0, -1):
+                strSringN = strSringN*i
+
+        print(strstring/(strStringM * strStringA * strSringT))
+    # print(strstring)
 
 
+# funcaoRetorna("MATEMATICA")
+
+
+def permutacaoPalavrasTotal(String):
+    palavra_tam = len(String)
+    fat = 1
+    if palavra_tam == 1 or palavra_tam == 0:
+        return 1
+    else:
+        for i in range(palavra_tam, 0, -1):
+            fat = fat * i
+    print(fat)
+
+
+def permutacaoPalavrasRepetidas(String):
+    totA = 0
+    totB = 0
+    totN = 0
+    totM = 0
+    totT = 0
+    totG = 0
+    totE = 0
+    totS = 0
+    permP = 1
+    permA = 1
+    permB = 1
+    permE = 1
+    permG = 1
+    permN = 1
+    permM = 1
+    permS = 1
+    permT = 1
+
+    p = len(String)
+    if p == 1 or p == 0:
+        return 1
+    else:
+        for i in range(p):
+            if String[i] == "A" or String[i] == "a":
+                totA += 1
+            else:
+                totA = totA
+        for i in range(p):
+            if String[i] == "B" or String[i] == "b":
+                totB += 1
+            else:
+                totB = totB
+        for i in range(p):
+            if String[i] == "E" or String[i] == "e":
+                totE += 1
+            else:
+                totE = totE
+        for i in range(p):
+            if String[i] == "G" or String[i] == "g":
+                totG += 1
+            else:
+                totG = totG
+
+        for i in range(p):
+            if String[i] == "N" or String[i] == "n":
+                totN += 1
+            else:
+                totN = totN
+        for i in range(p):
+            if String[i] == "M" or String[i] == "m":
+                totM += 1
+            else:
+                totM = totM
+        for i in range(p):
+            if String[i] == "S" or String[i] == "s":
+                totS += 1
+            else:
+                totS = totS
+        for i in range(p):
+            if String[i] == "T" or String[i] == "t":
+                totT += 1
+            else:
+                totT = totT
+
+        for i in range(p, 0, -1):
+            permP = permP*i
+
+        if totA == 0 or totA == 1:
+            totA = 1
+        else:
+            for i in range(totA, 0, -1):
+                permA = permA * i
+        if totB == 0 or totB == 0:
+            totB = 1
+        else:
+            for i in range(totB, 0, -1):
+                permB = permB * i
+        if totE == 0 or totE == 0:
+            totE = 1
+        else:
+            for i in range(totE, 0, -1):
+                permE = permE * i
+
+        if totG == 0 or totG == 0:
+            totG = 1
+        else:
+            for i in range(totG, 0, -1):
+                permG = permG * i
+
+        if totN == 0 or totN == 1:
+            totN = 1
+        else:
+            for i in range(totN, 0, -1):
+                permN = permN * i
+        if totM == 0 or totM == 1:
+            totM = 1
+        else:
+            for i in range(totM, 0, -1):
+                permM = permM * i
+        if totS == 0 or totS == 1:
+            totS = 1
+        else:
+            for i in range(totS, 0, -1):
+                permS = permS * i
+        if totT == 0 or totT == 1:
+            totT = 1
+        else:
+            for i in range(totT, 0, -1):
+                permT = permT * i
+
+    print(permP / (permA * permB * permN * permM * permT * permE * permG * permS))
+
+
+# permutacaoPalavrasTotal("ABACAXI")
+permutacaoPalavrasRepetidas("FERNANDES")
