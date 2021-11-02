@@ -71,7 +71,6 @@ def recorrenciaSequencia(n):
 
 
 # print()
-
 # print(recorrenciaSequencia(10))
 
 
@@ -82,7 +81,7 @@ def seq(n):
         return n
 
 
-print(seq(2))
+# print(seq(4))
 
 
 def Tseq(n):
@@ -92,7 +91,7 @@ def Tseq(n):
         return n
 
 
-print(Tseq(12))
+# print(Tseq(12))
 
 
 def fibbonaci(n):
@@ -102,7 +101,7 @@ def fibbonaci(n):
         return fibbonaci(n-1) + fibbonaci(n-2)
 
 
-print(fibbonaci(8))
+# print(fibbonaci(8))
 
 
 def serieSequencias(terms=50):
@@ -132,7 +131,7 @@ def factoral(numero):
         return numero * factoral(numero - 1)
 
 
-print(factoral(5))
+# print(factoral(5))
 
 # funcao que calcula a potencia de forma recursiva
 
@@ -149,7 +148,7 @@ def potencia(base, expoente):
     print(f'O valor de {base} elevado á {expoente} é igual á {potencia}')
 
 
-potencia(5, 2)
+#potencia(5, 2)
 
 
 def progressao_aritmetica(numero_termos, razao, a_1):
@@ -197,10 +196,10 @@ def sn(a1, an, terms):
     print(res)
 
 
-def termoGeral(a1,terms,r=1):
+def termoGeral(a1, terms, r=1):
     an = a1 + (terms-1)*r
-    sn = ((a1 + an)* terms)/2 
+    sn = ((a1 + an) * terms)/2
     return sn
 
 
-print(termoGeral(1,40,4))
+# print(termoGeral(1,40,4))
