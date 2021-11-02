@@ -46,13 +46,13 @@ def quantidadeVezesCaraCoroa(base,expoente):
         return base * quantidadeVezesCaraCoroa(base,expoente -1)
 
 
-for i in range(3):
-        print(jogarMoeda())
+#for i in range(3):
+       # print(jogarMoeda())
 
 
-print(quantidadeVezesCaraCoroa(2,3))
+#print(quantidadeVezesCaraCoroa(2,3))
 
-
+"""
 def jogar_n_vezes(n=100, imprimir=True):
     if imprimir:
         print(f'Jogando moeda {n} vezes\n')
@@ -66,14 +66,14 @@ def jogar_n_vezes(n=100, imprimir=True):
         print(f'Resultado\ncara = {n_caras} vezes\ncoroa = {n_coroas} vezes')
     return resultados, n_caras, n_coroas
 
-_=jogar_n_vezes(200)
+#_=jogar_n_vezes(200)
 
 
-numero_de_rodadas = 1000
-jogadas_por_rodada = 100
+#numero_de_rodadas = 1000
+#jogadas_por_rodada = 100
 
-n_caras_rodada = []
-n_coroas_rodada = []
+#n_caras_rodada = []
+#n_coroas_rodada = []
 
 for rodada in range(numero_de_rodadas):
     _, n_caras, n_coroas = jogar_n_vezes(jogadas_por_rodada, False)
@@ -123,7 +123,7 @@ _ = plt.plot(X, y)
 
 _ = plt.hist(n_caras_rodada, 100)
 _ = plt.plot(X, y*1000)
-
+"""
 def exemploAtletas(qtd,possiveis):
     if qtd == 0 or qtd == 1:
         return 1
@@ -131,8 +131,39 @@ def exemploAtletas(qtd,possiveis):
         return exemploAtletas(qtd -1, possiveis)* qtd 
 
 
-print(exemploAtletas(4,3))
+#print(exemploAtletas(4,3))
 
+def cartasBaralho(base,expoente):
+    if expoente == 0:
+        return 1
+    else: 
+        return base * cartasBaralho(base,expoente-1)
+
+
+#print(cartasBaralho(52,5))
+
+def cartasBaralhosSemReposicao(qtd,possiveis):
+    baralho = 1
+    i=1
+    while(i <= possiveis):
+        baralho*=qtd
+        qtd-=1
+        i += 1
+    
+    return baralho
+
+
+#print(cartasBaralhosSemReposicao(52, 5))
+
+
+def cartesianoOrtogonal(eixos,passos):
+    if passos == 0:
+        return 1
+    else:
+        return eixos * cartesianoOrtogonal(eixos,passos-1)
+
+
+print(cartesianoOrtogonal(2, 4))
 
 
 
