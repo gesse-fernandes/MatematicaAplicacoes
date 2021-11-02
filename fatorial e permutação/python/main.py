@@ -26,7 +26,9 @@ permutacoes com repeticao
 MATEMATICA = P_10, 2,3,2
 """
 
-from itertools import permutations
+# um programa para imprimir e calcular o numero de permutaçoes, arranjos e combinaçoes
+from math import factorial
+from itertools import permutations, combinations, combinations_with_replacement
 from typing import NoReturn, Text
 
 
@@ -95,7 +97,7 @@ print(pessoas(5))
 
 print(len("MATEMATICA"))
 
-
+"""
 def permutations(string, step=0):
 
     # if we've gotten to the end, print the permutation
@@ -114,8 +116,9 @@ def permutations(string, step=0):
         # recurse on the portion of the string that has not been swapped yet (now it's index will begin with step + 1)
         permutations(string_copy, step + 1)
 
-
+"""
 # permutations("BANANA")
+
 
 def permute(data, i, length):
     if i == length:
@@ -337,4 +340,65 @@ def permutacaoPalavrasRepetidas(String):
 
 
 # permutacaoPalavrasTotal("ABACAXI")
-permutacaoPalavrasRepetidas("FERNANDES")
+permutacaoPalavrasRepetidas("MATEMATICA")
+
+lista = [1, 2, 3, 4]
+
+
+def lista_permutacoes(Lista):
+    lista_permutacoes = permutations(Lista)
+    for i in list(lista_permutacoes):
+        print(i)
+
+
+lista_permutacoes(lista)
+
+# imprime o numero de arranjos de uma lista organizados de k formas
+
+
+def lista_arranjo(Lista, k):
+    lista_arranjo = permutations(Lista, k)
+    for i in list(lista_arranjo):
+        print(i)
+
+
+lista_arranjo(lista, 2)
+
+
+def lista_combinacoes(Lista, k):
+    lista_combinacoes = combinations(Lista, k)
+    for i in list(lista_combinacoes):
+        print(i)
+
+
+print()
+lista_combinacoes(lista, 2)
+
+
+# funcao que calcula o numero de permutacoes
+def num_permutacoes(Lista):
+    num_permutacoes = factorial(len(Lista))
+    print(f'Numero de permutacoes da lista é = {num_permutacoes}')
+
+
+num_permutacoes(lista)
+
+
+# Funcao que retorna o numero de arranjo de uma lista
+def num_arranjo(Lista, k):
+    num_arranjo = factorial(len(Lista))/factorial(len(Lista)-k)
+    print(f'Numero de arranjos da lista é ={num_arranjo}')
+
+
+num_arranjo(lista, 2)
+
+# funcao que retorna o nuemro de combinacoes de uma lista organizados de k formas
+
+
+def num_combinacoes(Lista, k):
+    num_combinacoes = factorial(len(Lista)) / \
+        (factorial(len(Lista)-k)*factorial(k))
+    print(f'Numero de combinacoes da lista é ={num_combinacoes}')
+
+
+num_combinacoes(lista, 2)

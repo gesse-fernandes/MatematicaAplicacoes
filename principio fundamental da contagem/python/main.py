@@ -27,6 +27,7 @@ se ele der exatamente 4 passos
 """
 
 
+from math import pi, exp, sqrt
 import matplotlib.pyplot as plt
 import random
 import numpy as np
@@ -51,7 +52,7 @@ for i in range(3):
 
 print(quantidadeVezesCaraCoroa(2,3))
 
-"""
+
 def jogar_n_vezes(n=100, imprimir=True):
     if imprimir:
         print(f'Jogando moeda {n} vezes\n')
@@ -98,8 +99,30 @@ print(f'Média de caras: {caras_avg}')
 print(f'Média de coroas: {coroas_avg}')
 print(f'Desvio padrão de caras {caras_std:.2f}')
 print(f'Desvio padrão de coroas {coroas_std:.2f}')
-"""
 
+cara_entre_45_e_55 = sum(45<=n<=55 for n in n_caras_rodada)
+cara_entre_40_e_60 = sum(40<=n<=60 for n in n_caras_rodada)
+coroa_entre_45_e_55 = sum(45<=n<=55 for n in n_coroas_rodada)
+coroa_entre_40_e_60 = sum(40<=n<=60 for n in n_coroas_rodada)
+
+print(f'Número de rodadas: {numero_de_rodadas}')
+print(f'Número de jogadas de moeda por rodada {jogadas_por_rodada}')
+print(f'Quantidade de rodadas que caíram cara entre 45 e 55 vezes: {cara_entre_45_e_55}')
+print(f'Quantidade de rodadas que caíram cara entre 40 e 60 vezes: {cara_entre_40_e_60}')
+print(f'Quantidade de rodadas que caíram coroa entre 45 e 55 vezes: {coroa_entre_45_e_55}')
+print(f'Quantidade de rodadas que caíram coroa entre 40 e 60 vezes: {coroa_entre_40_e_60}')
+
+
+def normal_distr(avg, std, num=50):
+    def f(x): return exp(-(x-avg)**2/(2*std**2))/sqrt(2*pi*std**2)
+    X = np.linspace(avg-3*std, avg+3*std, num=num)
+    return X, np.array([f(x) for x in X])
+
+X,y = normal_distr(50, 5)
+_ = plt.plot(X, y)
+
+_ = plt.hist(n_caras_rodada, 100)
+_ = plt.plot(X, y*1000)
 
 def exemploAtletas(qtd,possiveis):
     if qtd == 0 or qtd == 1:

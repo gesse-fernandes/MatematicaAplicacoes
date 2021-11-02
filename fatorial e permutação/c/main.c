@@ -1,10 +1,11 @@
 #include <stdio.h>
-
+#include <string.h>
 int factorialNumerador(int numerador);
 int factorialDenominador(int denominador);
 double factorialDivisor(int numerador, int denominador);
 void permuta(int vetor[], int inf, int sup);
 void troca(int vetor[], int i, int j);
+int permutaPalavra(int palavra);
 int main(int argc, char const *argv[])
 {
     printf(" numerador = %d", factorialNumerador(10));
@@ -12,7 +13,9 @@ int main(int argc, char const *argv[])
     printf("\n divisor %.0lf\n", factorialDivisor(factorialNumerador(10), factorialDenominador(8)));
     int v[] = {1, 2, 3, 4};
     int tam_v = sizeof(v) / sizeof(int);
-    permuta(v, 0, tam_v - 1);
+    //permuta(v, 0, tam_v - 1);
+    int teste = strlen("BANANA");
+    printf("%d ", permutaPalavra(teste));
     return 0;
 }
 
@@ -72,4 +75,12 @@ void permuta(int vetor[],int inf , int sup)
             troca(vetor, inf, i);
         }
     }
+}
+
+int permutaPalavra(int palavra)
+{
+    if(palavra == 1 || palavra == 0)
+        return 1;
+    else
+        return palavra * permutaPalavra(palavra - 1);
 }
