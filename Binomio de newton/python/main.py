@@ -15,7 +15,7 @@ def triangulo_pascal(numero_linhas=1):
     return triangulo
 
 
-print(triangulo_pascal(2))
+#print(triangulo_pascal(2))
 def fatorial(n):
    fatorial = 1
 
