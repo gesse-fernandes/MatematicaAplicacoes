@@ -69,20 +69,20 @@ def factorialNumeradorDenominador(numerador, denominador):
 
 def factorialNumeradorDenominadorDireita(numerador, denominador, denominadorDireita):
     if numerador == 0 or numerador == 1:
-        return 1
+        return 0
     else:
         return (numerador / (denominador * denominadorDireita))
 
 
-print(factorial(10))
+#print(factorial(10))
 
 
-print(factorialNumeradorDenominador(
-    fatorialNumerador(10), fatorialDenominador(8)))
+#print(factorialNumeradorDenominador(
+    #fatorialNumerador(10), fatorialDenominador(8)))
 
 
-print(factorialNumeradorDenominadorDireita(
-    fatorialNumerador(12), fatorialDenominador(9), factorialDenominadorDireita(3)))
+#print(factorialNumeradorDenominadorDireita(
+    #fatorialNumerador(12), fatorialDenominador(9), factorialDenominadorDireita(3)))
 # ex 5 pessoas na fila
 
 
@@ -93,7 +93,7 @@ def pessoas(people):
         return people * pessoas(people - 1)
 
 
-print(pessoas(5))
+#print(pessoas(5))
 
 print(len("MATEMATICA"))
 
@@ -149,23 +149,23 @@ def testPalavra(string):
     print(test)
 
 
-testPalavra("MATEMATICA")
+#testPalavra("MATEMATICA")
 
 
-test = "Python é lindo Python top"
-substring = "Python"
+#test = "Python é lindo Python top"
+#substring = "Python"
 
-total = test.count(substring)
-print(str(total))
+#total = test.count(substring)
+#print(str(total))
 
-
+"""
 totM = 0
 s = "MATEMATICA"
 for letras in range(len(s)):
     if s[letras] == "M":
         totM += 1
 print(totM)
-
+"""
 
 def funcaoRetorna(string):
     tam = len(string)
