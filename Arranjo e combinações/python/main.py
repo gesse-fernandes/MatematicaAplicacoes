@@ -30,6 +30,12 @@ escolher 3 subtrair do 5,3 escolher 3 deles possiveis pra formar o triangulo com
 """
 
 
+def fatorial(n):
+    if n == 1 or n == 0:
+        return 1
+    else:
+        return n * fatorial(n-1)
+
 def arranjo(m, n):
     M = 1
     N = 1
@@ -53,8 +59,16 @@ def arranjo(m, n):
     print(resultado)
 
 
-#arranjo(8, 2)
+arranjo(8, 2)
 
+def arranjoRecursivo(m,n):
+    if m == 0 or m ==  1 or n == 0 or n == 1:
+        return 1
+    else: 
+        return  fatorial(m) / (fatorial(m-n))
+
+
+print(arranjoRecursivo(8,2))
 
 def combinacao(m, n):
     M = 1
@@ -129,12 +143,12 @@ def combinacaoHomensMulheres(m_H, n_H, m_M, n_M):
     #print(resultado_homem * resultado_mulher)
     return resultado_homem * resultado_mulher
 
-#print(combinacaoHomensMulheres(11,4,7,3))
-print(combinacaoHomensMulheres(3, 1, 8, 4)* combinacaoHomensMulheres(10, 4, 6, 2))
+# print(combinacaoHomensMulheres(11,4,7,3))
+#print(combinacaoHomensMulheres(3, 1, 8, 4)* combinacaoHomensMulheres(10, 4, 6, 2))
 
 # adaptada
 
-
+"""
 def combinacaoComplementar(pontos, escolher, pontosPossiveis, escolherPossiveis):
     pounter = 1
     es = 1
@@ -181,6 +195,20 @@ def combinacaoComplementar(pontos, escolher, pontosPossiveis, escolherPossiveis)
     resultP_E_P = po_possiveis/(p_e_p * es_possiveis)
     final = resultP - resultP_E_P
     print(final)
-
+"""
 
 #combinacaoComplementar(11, 4, 7, 3)
+
+
+
+
+
+def combinacaoTest(m, n):
+    if m == 1 or m == 0 or n == 1 or n == 1:
+        return 1
+    else:
+        return fatorial(m) / (fatorial(n) * fatorial(m-n))
+
+
+
+#print(combinacaoTest(11,4) - combinacaoTest(7,3))
